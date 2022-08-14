@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { initialState as countInitialState, countReducer } from '../components/count/countSlice'
 import { initialState as expenseInitialState, expenseReducer } from '../components/expense/ExpenseSlice'
+import { save, load } from 'redux-localstorage-simple'; //localStrage
 
 export class RootState {
   count = countInitialState;
@@ -15,7 +16,9 @@ const reducer = {
 
 //store
 const store = configureStore({
-  reducer
+  reducer,
+  preloadedState: load(),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(save()),
 })
 
 export default store;
