@@ -17,6 +17,13 @@ export default function BasicBreadcrumbs() {
         >
           家計簿
         </Link>
+        <Link
+          underline="hover"
+          color="inherit"
+          href="/calendar"
+        >
+          カレンダー
+        </Link>
       </Breadcrumbs>
     </div>
   );
