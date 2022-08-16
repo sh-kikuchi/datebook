@@ -24,6 +24,13 @@ export default function BasicBreadcrumbs() {
         >
           カレンダー
         </Link>
+        <Link
+          underline="hover"
+          color="inherit"
+          href="/event"
+        >
+          イベント
+        </Link>
       </Breadcrumbs>
     </div>
   );

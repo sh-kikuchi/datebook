@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import CountView from './components/count/countView'
 import ExpenseView from './components/expense/ExpenseView';
+import EventView from './components/events/EventView';
 import CalendarView from './components/calendar/CalendarView';
 import BasicBreadcrumbs from './components/util/BreadCrumb/app';
 
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<CountView />} />
           <Route path="/expense" element={<ExpenseView />} />
           <Route path="/calendar" element={<CalendarView />} />
+          <Route path="/event" element={<EventView />} />
         </Routes>
       </div>
     </BrowserRouter>
