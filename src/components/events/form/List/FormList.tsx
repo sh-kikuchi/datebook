@@ -24,9 +24,7 @@ type rowData = {
   detail: String
 }
 
-let rows: rowData[] = [
-  // { id: 'test', title: 'test', start: '2022/08/16', end: '2022/08/26', detail: 'test' }
-];
+let rows: rowData[] = [];
 
 // function FormList(props: Props) {
 function FormList() {

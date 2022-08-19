@@ -6,7 +6,6 @@ function EventView() {
     <div>
       <div className="container">
         <div className='header'>
-          <h1>Events</h1>
           <div><FormWrap /></div>
         </div>
       </div>
