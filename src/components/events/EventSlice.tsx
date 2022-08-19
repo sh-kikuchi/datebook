@@ -5,7 +5,9 @@ interface EventState {
   title: String,
   start: String,
   end: String,
-  detail: String
+  detail: String,
+  backgroundColor: String,
+  borderColor: String
 }
 
 export const initialState = []

@@ -6,13 +6,15 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import { useDispatch } from "react-redux";
-import { createEventData } from "../../EventSlice"
+import { createEventData } from "../../EventSlice";
 
 function FormCard() {
   const [title, setTitle] = useState('');
   const [start, setStart] = useState('');
   const [end, setEnd] = useState('');
   const [detail, setDetail] = useState('');
+  const [backgroundColor, setBackgroundColor] = useState('');
+  const [borderColor, setBorderColor] = useState('');
 
   const dispatch = useDispatch();
 
@@ -22,7 +24,9 @@ function FormCard() {
       title,
       start,
       end,
-      detail
+      detail,
+      backgroundColor,
+      borderColor
     };
     console.log(formData);
     dispatch(createEventData(formData));
@@ -50,7 +54,7 @@ function FormCard() {
           />
           <TextField
             id="datetime-local"
-            label="Next appointment"
+            label="開始日"
             type="datetime-local"
             placeholder="開始日"
             sx={{ width: 250 }}
@@ -61,7 +65,7 @@ function FormCard() {
           />
           <TextField
             id="datetime-local"
-            label="Next appointment"
+            label="終了日"
             type="datetime-local"
             placeholder="終了日"
             sx={{ width: 250 }}
@@ -88,12 +92,20 @@ function FormCard() {
             placeholder="ひとくちメモ"
             onChange={(event) => setDetail(event.target.value)}
           />
+          <input
+            type="color"
+            onChange={(event) => {
+              setBackgroundColor(event.target.value)
+              setBorderColor(event.target.value)
+            }}
+          />
         </Box>
         <CardActions sx={{ minWidth: '120', display: 'flex', justifyContent: 'center' }}>
           <Button size="small" onClick={handleClickRegister}>追加</Button>
         </CardActions>
       </CardContent>
     </Card>
+
   );
 }
 

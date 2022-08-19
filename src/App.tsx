@@ -1,7 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import CountView from './components/count/countView'
-import ExpenseView from './components/expense/ExpenseView';
 import EventView from './components/events/EventView';
 import CalendarView from './components/calendar/CalendarView';
 import BasicBreadcrumbs from './components/util/BreadCrumb/app';
@@ -10,12 +8,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <h1>React Expo</h1>
+        <h1>♪datebook</h1>
         <BasicBreadcrumbs />
         <Routes>
-          <Route path="/" element={<CountView />} />
-          <Route path="/expense" element={<ExpenseView />} />
-          <Route path="/calendar" element={<CalendarView />} />
+          <Route path="/" element={<CalendarView />} />
           <Route path="/event" element={<EventView />} />
         </Routes>
       </div>
