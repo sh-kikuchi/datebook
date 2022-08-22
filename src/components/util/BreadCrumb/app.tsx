@@ -8,7 +8,7 @@ export default function BasicBreadcrumbs() {
         <Link
           underline="hover"
           color="inherit"
-          href="/"
+          href="/calendar"
         >
           カレンダー
         </Link>

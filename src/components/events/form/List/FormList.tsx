@@ -43,7 +43,11 @@ function FormList() {
 
   return (
     <div style={{ height: 400, width: '100%' }} >
-      <Box component='div' sx={{ p: 2, textAlign: 'right' }}>
+      <Box component='div' sx={{
+        p: 2, display: 'flex',
+        justifyContent: 'space-between',
+      }}>
+        <Button variant="contained" color='info' href='/calendar'>カレンダー</Button>
         <Button variant="contained" color='warning' onClick={handleDeleteRows}>削除</Button>
       </Box>
       <DataGrid
