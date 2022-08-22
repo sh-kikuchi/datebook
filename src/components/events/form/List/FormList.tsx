@@ -4,28 +4,31 @@ import { DataGrid, GridColDef, GridSelectionModel } from '@mui/x-data-grid';
 import { RootState } from '../../../../store/index'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { deleteExpenseData } from "../../ExpenseSlice"
+import { deleteEventData } from "../../EventSlice"
 import { useDispatch } from "react-redux";
 
 
 const columns: GridColDef[] = [
   // { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'name', headerName: 'name', width: 250 },
-  { field: 'price', headerName: 'price', width: 150 },
-  { field: 'date', headerName: 'date', width: 100 },
+  { field: 'title', headerName: 'イベント名', width: 250 },
+  { field: 'start', headerName: '開始日', width: 200 },
+  { field: 'end', headerName: '修了日', width: 200 },
+  { field: 'detail', headerName: 'ひとくちメモ', width: 400 },
 ];
 
 type rowData = {
   id: String,
-  name: String,
-  price: Number,
-  date: String
+  title: String,
+  start: String,
+  end: String,
+  detail: String
 }
+
 let rows: rowData[] = [];
 
 // function FormList(props: Props) {
 function FormList() {
-  const expense = useSelector((state: RootState) => state.expense);
+  const event = useSelector((state: RootState) => state.event);
   const [selectionModel, setSelectionModel] = useState<GridSelectionModel>([]);
 
   const dispatch = useDispatch();
@@ -33,14 +36,18 @@ function FormList() {
   const handleDeleteRows = () => {
     console.log('handleDeleteRows is called');
     if (selectionModel.length === 0) return;
-    dispatch(deleteExpenseData(selectionModel.toString()));
+    dispatch(deleteEventData(selectionModel.toString()));
   }
 
-  rows = expense;
+  rows = event;
 
   return (
     <div style={{ height: 400, width: '100%' }} >
-      <Box component='div' sx={{ p: 2, textAlign: 'right' }}>
+      <Box component='div' sx={{
+        p: 2, display: 'flex',
+        justifyContent: 'space-between',
+      }}>
+        <Button variant="contained" color='info' href='/calendar'>カレンダー</Button>
         <Button variant="contained" color='warning' onClick={handleDeleteRows}>削除</Button>
       </Box>
       <DataGrid
