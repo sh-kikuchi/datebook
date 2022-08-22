@@ -48,7 +48,7 @@ function FormCard() {
           <TextField
             id="outlined-error"
             label=""
-            sx={{ width: '150px' }}
+            sx={{ width: 250 }}
             placeholder="イベント名"
             onChange={(event) => setTitle(event.target.value)}
           />
@@ -57,7 +57,7 @@ function FormCard() {
             label="開始日"
             type="datetime-local"
             placeholder="開始日"
-            sx={{ width: 250 }}
+            sx={{ width: 200 }}
             InputLabelProps={{
               shrink: true,
             }}
@@ -68,7 +68,7 @@ function FormCard() {
             label="終了日"
             type="datetime-local"
             placeholder="終了日"
-            sx={{ width: 250 }}
+            sx={{ width: 200 }}
             InputLabelProps={{
               shrink: true,
             }}
@@ -92,16 +92,19 @@ function FormCard() {
             placeholder="ひとくちメモ"
             onChange={(event) => setDetail(event.target.value)}
           />
-          <input
-            type="color"
-            onChange={(event) => {
-              setBackgroundColor(event.target.value)
-              setBorderColor(event.target.value)
-            }}
-          />
+          <div>
+            <input
+              type="color"
+              onChange={(event) => {
+                setBackgroundColor(event.target.value)
+                setBorderColor(event.target.value)
+              }}
+            />
+            <label> ※カレンダー内のイベントバーの色を変えることが出来ます</label>
+          </div>
         </Box>
         <CardActions sx={{ minWidth: '120', display: 'flex', justifyContent: 'center' }}>
-          <Button size="small" onClick={handleClickRegister}>追加</Button>
+          <Button size="small" onClick={handleClickRegister}>イベントを追加する</Button>
         </CardActions>
       </CardContent>
     </Card>
