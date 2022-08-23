@@ -10,7 +10,6 @@ function CalendarView() {
   const event = useSelector((state: RootState) => state.event);
   return (
     <div>
-      <a href="/">home</a>
       <FullCalendar
         plugins={[dayGridPlugin, timeGridPlugin, listPlugin]}
         initialView="dayGridMonth"

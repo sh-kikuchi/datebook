@@ -12,13 +12,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import EventIcon from '@mui/icons-material/Event';
 import Link from '@mui/material/Link';
-// import BasicBreadcrumbs from './components/util/BreadCrumb/app';
+
 function App() {
   const pages = [
     { "name": "home", "url": "/" },

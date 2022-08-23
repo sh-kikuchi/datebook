@@ -11,7 +11,7 @@ import ListItemText from '@mui/material/ListItemText';
 function Home() {
   return (
     <div className="Home">
-      <Grid container spacing={2}>
+      <Grid container>
         <Grid xs={12} md={6}>
           <img src={HomeImage} alt="アイコン" />
         </Grid>
